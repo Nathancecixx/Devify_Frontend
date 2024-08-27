@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import { Button, AppBar, Toolbar, Typography, Container } from '@mui/material';
+import LandingPage from "./Pages/LandingPage";
+import NoPage from "./Pages/NoPage";
+import Dashboard from "./Pages/ServerDashboard";
+import ServerList from "./Pages/ServerList";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div>
+            <BrowserRouter>
+                <Routes>
+                    <Route index element={<LandingPage />} />
+                    <Route path="server-list" element={<ServerList/>}/>
+                    <Route path="/server/:guildId" element={<Dashboard />}/>
+                    <Route path="*" element={<NoPage />} />
+                </Routes>
+            </BrowserRouter>
+        </div>
+    );
 }
 
 export default App;
