@@ -1,15 +1,14 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
-import { Button, AppBar, Toolbar, Typography, Container } from '@mui/material';
 import LandingPage from "./Pages/LandingPage";
 import NoPage from "./Pages/NoPage";
 import Dashboard from "./Pages/ServerDashboard";
 import ServerList from "./Pages/ServerList";
-
+import './App.css';
 
 function App() {
     return (
-        <div>
+        <div className='app'>
             <BrowserRouter>
                 <Routes>
                     <Route index element={<LandingPage />} />
