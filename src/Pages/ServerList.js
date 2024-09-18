@@ -90,14 +90,13 @@ function ServerList() {
             >
                 <Toolbar
                     sx={{
-                        justifyContent: 'space-evenly',
+                        justifyContent: 'space-between',
                         backgroundColor: '#2F3136',
-                        paddingX: isMobile ? '10px' : '40px',
                         paddingY: '10px',
                     }}
                 >
 
-                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    <Box sx={{ ml: 5, display: 'flex', alignItems: 'center' }}>
                         <Typography variant="h1">
                             Devify
                         </Typography>
@@ -127,7 +126,7 @@ function ServerList() {
             </AppBar>
 
             {/* Main Content */}
-            <Container sx={{ flexGrow: 1, marginTop: theme.spacing(4), marginBottom: theme.spacing(4) }}>
+            <Container sx={{ flexGrow: 1, marginTop: theme.spacing(10), marginBottom: theme.spacing(4) }}>
                 {isLoading ? (
                     <Box
                         sx={{
@@ -230,9 +229,11 @@ function ServerList() {
                                                 height: '100%',
                                                 display: 'flex',
                                                 flexDirection: 'column',
+                                                transition: 'transform 0.3s ease',
                                                 cursor: 'pointer',
                                                 '&:hover': {
-                                                    backgroundColor: '#23272A',
+                                                    backgroundColor: '#202225',
+                                                    transform: 'scale(1.05)',
                                                 },
                                             }}
                                             onClick={() => handleServerClick(server)}
